@@ -1,7 +1,20 @@
 services:
+  app:
+    build: .
+    container_name: main
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - gradle-cache:/home/gradle/.gradle
+
   postgres:
     image: postgres:17.4
-    container_name: reflecta-database
+    container_name: db
+    restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -13,3 +26,4 @@ services:
 
 volumes:
   postgres-data:
+  gradle-cache:

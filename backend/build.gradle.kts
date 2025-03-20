@@ -4,6 +4,9 @@ plugins {
 	id("org.springframework.boot") version "3.4.2"
 	id("io.spring.dependency-management") version "1.1.7"
 	kotlin("plugin.jpa") version "1.9.25"
+	koltin("allopen") version "1.9.25"
+	kotlin("plugin.noarg") version "1.9.25"
+
 }
 
 group = "kfd.reflecta"
