@@ -1,8 +1,10 @@
-FROM gradle:8.12
+FROM gradle:8.12.1
 
 WORKDIR /app
 
-COPY .. .
+COPY . .
+
+RUN chmod +x gradlew
 
 EXPOSE 8000
 
