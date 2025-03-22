@@ -1,4 +1,4 @@
-package kfd.reflecta.backend.database.entity
+package kfd.reflecta.backend.database.entities
 
 import jakarta.persistence.*
 

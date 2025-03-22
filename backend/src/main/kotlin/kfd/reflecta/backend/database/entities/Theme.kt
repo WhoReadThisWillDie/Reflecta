@@ -1,4 +1,4 @@
-package kfd.reflecta.backend.database.entity
+package kfd.reflecta.backend.database.entities
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -9,6 +9,9 @@ import jakarta.persistence.Table
 @Table(name = "themes")
 class Theme(
     @Column(unique = true, nullable = false)
-    val name: String
+    val name: String,
+
+    @Column(name = "is_default")
+    val isDefault: Boolean = false
 ) : AbstractEntity() {
 }

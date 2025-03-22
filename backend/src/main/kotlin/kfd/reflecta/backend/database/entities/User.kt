@@ -1,4 +1,4 @@
-package kfd.reflecta.backend.database.entity
+package kfd.reflecta.backend.database.entities
 
 import jakarta.persistence.*
 
@@ -19,8 +19,8 @@ class User(
     @Column(unique=true)
     var avatar: String? = null
 
-    @OneToOne(mappedBy = "user")
-    val userSettings: UserSettings? = null
+    @OneToOne(mappedBy = "user", cascade = [(CascadeType.ALL)], orphanRemoval = true)
+    var userSettings: UserSettings? = null
 
     @ManyToMany
     @JoinTable(
